@@ -48,13 +48,13 @@ sorting=nty,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	DIPLOMA INFO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\ttitle}{Ponudniki identitev z uporabo pametnih pogodb - ni končen naslov}
+\newcommand{\ttitle}{Ponudniki identitev z uporabo pametnih pogodb}
 \newcommand{\ttitleEn}{Identity providers backed by smart contract}
 \newcommand{\tsubject}{\ttitle}
 \newcommand{\tsubjectEn}{\ttitleEn}
 \newcommand{\tauthor}{Rok Šerak}
-\newcommand{\tkeywords}{Verige blokov, Pametne pogodbe, Ponudniki identitet}
-\newcommand{\tkeywordsEn}{Blockchain, Smart contracts, Identity providers}
+\newcommand{\tkeywords}{Verige blokov, Pametne pogodbe, Ponudniki identitet, Ethereum, Filecoin, JavaScript, TypeScript, Solidity}
+\newcommand{\tkeywordsEn}{Blockchain, Smart contracts, Identity providers, Ethereum, Filecoin, JavaScript, TypeScript, Solidity}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	HYPERREF SETUP
@@ -210,7 +210,7 @@ sorting=nty,
 %    INTERDISCIPLINARNI UNIVERZITETNI\\ ŠTUDIJSKI PROGRAM PRVE STOPNJE\\ RAČUNALNIŠTVO IN MATEMATIKA}\par}%
     \vfill\null%
 % izberite pravi habilitacijski naziv mentorja!
-    {\large \textsc{Mentor}: doc. dr. Luka Šajn \par}%
+    {\large \textsc{Mentor}: Doc. Dr. Luka Šajn \par}%
     {\vskip 2em \large Ljubljana, \the\year \par}%
 \end{center}
 % prazna stran
@@ -263,13 +263,12 @@ Besedilo je oblikovano z urejevalnikom besedil \LaTeX.}
 \vfill
 
 \bigskip
-\noindent\textbf{Kandidat:} Ime Priimek\\
-\noindent\textbf{Naslov:} Naslov diplomskega dela\\
+\noindent\textbf{Kandidat:} Rok Šerak \\
+\noindent\textbf{Naslov:} Ponudniki identitev z uporabo pametnih pogodb \\
 % vstavite ustrezen naziv študijskega programa!
-\noindent\textbf{Vrsta naloge:} npr. Diplomska naloga na univerzitetnem programu prve stopnje Računalništvo in informatika \\
+\noindent\textbf{Vrsta naloge:} Diplomska naloga na visokošolskem programu prve stopnje Računalništvo in informatika \\
 % izberite pravi habilitacijski naziv mentorja!
-\noindent\textbf{Mentor:} viš. pred. / doc. / izr. prof. / prof. dr. Ime Priimek\\
-\noindent\textbf{Somentor:} isto kot za mentorja
+\noindent\textbf{Mentor:} Doc. Dr. Luka Šajn \\
 
 \bigskip
 \noindent\textbf{Opis:}\\
@@ -278,7 +277,7 @@ V nekaj stavkih bo opisal, kaj pričakuje od kandidatovega diplomskega dela.
 Kaj so cilji, kakšne metode naj uporabi, morda bo zapisal tudi ključno literaturo.
 
 \bigskip
-\noindent\textbf{Title:} Naslov diplomskega dela v angleščini
+\noindent\textbf{Title:} Identity providers backed by smart contract
 
 \bigskip
 \noindent\textbf{Description:}\\
@@ -386,6 +385,77 @@ A proper abstract should contain around 100 words which makes this one way too s
 \mainmatter
 \setcounter{page}{1}
 \pagestyle{fancy}
+
+\chapter{Uvod}
+
+\section{Prestavitev problema}
+TODO
+
+\section{Cilj diplome}
+V sklopu diplome bomo implementirali storitev ponudnika identitev (ang. Identity provider) z uporabo pametnih pogodb (ang. Smart contract).
+Storitev bo uporabnikom omogočala shranjenje, prikazovanje in urejanja svoje identitete, katero bodo lahko decentralizirane aplikacije za prikaz osnovnih podatkov o uporabniku.
+Uporabnik sam bo seveda imel popoln nadzor nad svojo identiteto in tem, kaj želi, da njegova identiteta vključuje.
+Torej noben vnos podatkov ne bo obvezen, uporabnik bo lahko prosto uporabljal našo storitev, v takšnem obsegu, kot bo to sam želel.
+Storitev bo ponujala samo identiteto, ne pa tudi authentikacije in verifikacije, kar omogoča večina preostalih ponudnikov identitet, to pa zato, 
+ker verige blokov že same po sebi ponujajo authentikacijo z uporabo privatnega ključa in pa tudi identito z javnim ključem, 
+a iz javnega ključa težko razberemo kakršne koli osebne podatke o samem uporabniku, kar pa bo omogočala naša storitev.
+Našo storitev bomo razvili na Ethereum verigi blokov in Filecoin decentraliziranem omrežju za shranjevanje datotek.
+Na Ethereum platformi bomo imeli nameščeno našo storitev, ter hranili tekstovne podatke o uporabikih.
+Na Filecoin omrežju pa bomo hranili uporabnikove datoteke, katere so prav tako del njegove identitete, kot je na primer profilna slika.
+Dodatno bomo implementirali še spletni gradnik z uporabo React knjižnice, katerega bomo lahko decentralizirane aplikacije enostavno vključile vase.
+Z gradnikom bodo lahko prikazali uporabnikove podatke, prav tako pa bo uporabnik lahko urejal podatke preko gradnika.
+Seveda pa bo komunikacija z našo storitvijo možna tudi preko kateremo koli knjižnice, ki ima podporo za komunikacijo z pametnimi pogodbami na Ethereum verigi blokov, kot so recimo Ethers.js ali pa Web3.js.
+
+\section{Pregled sorodnih del}
+Google, Facebook, Apple sign in, OpenID, Keycloak?
+TODO
+
+
+\chapter{Orodja in tehnologije}
+TODO
+
+\section{Pronudniki identitet}
+TODO
+
+\section{Decentralizirane aplikacije - dApp}
+TODO
+
+\section{Ethereum}
+TODO
+
+\section{Filecoin}
+TODO
+
+\section{Pamente pogodbe}
+TODO
+
+\section{Solidity}
+TODO
+
+\section{JavaScript}
+TODO
+
+\section{TypeScript}
+TODO
+
+\section{React}
+TODO
+
+\section{WebStorm?}
+TODO?
+
+
+\chapter{Razvoj aplikacije}
+TODO
+
+
+\chapter{Rezultati testiranja}
+TODO
+
+
+\chapter{Sklep}
+TODO
+
 
 \chapter{Uvod}
 Prvi koristen nasvet v zvezi uporabo \LaTeX{a} pri pisanju vašega diplomskega dela je, da v celoti preberete ta dokument!
