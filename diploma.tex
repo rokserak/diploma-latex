@@ -435,7 +435,18 @@ TODO
 TODO
 
 \section{Pametne pogodbe}
-TODO
+Pametne pogodbe so programi, kateri tečejo na verigah blokov.
+Glavna razlika med pametnimi pogodbami, ter tradicionalnimi programi je to, da je pametna pogodba shranjena na verigi blokov, med tem ko so tradicionalni programi lahko shranjeni oziroma delujejo na kateri koli napravi.
+Prav tako so vsi podatki, katere pametna pogodba potrebuje za svoje delovanje, shranjeni na verigi blokov.
+Delovanje pametnih pogodb je avtomatizirano, kar pomeni, da ko nekdo želi izvesti neko funkcionalnost pametne pogodbe, ter zagotovi pogoje za izvedbo izbrane funkcionalnosti, te izvedbe ne more nihče preprečiti.
+Za interakcijo z pametno pogodbo uporabnik potrebuje račun na verigi blokov, na kateri je pogodba nameščena.
+Interakcijo oziroma akcije pametnih pogodb lahko razdelimo na dve večji kategoriji in sicer akcije, za katere je potrebno plačilo in tiste interakcije, katere so brezplačne.
+Plačljive akcije so tiste, katerih izvedba ima vpliv na stanje verige blokov, torej bo spremenila oziroma posobodila trenutno stanje verige blokov.
+Pomembno se je tudi zavedati, da se plačljive akcije ne izvede instantno, ampak je za izvedbo potrebna vključitev akcije v blok, katerega potem veriga blokov sprejme, kot novo aktualno stanje verige blokov.
+Trenutno najbolj pogost primer uporabe pametnih pogodb so tako imenovani ERC20 tokni \cite{erc20_token_standard} , katere lahko naredi kdor koli, ter ji nato znotraj pametne pogodbe razdeli ostalim uporabnikom. Pri ERC20 token pogodba je recimo plačljiva akcija prenov neke količine toknov iz računa enega uporabnika na račun drugega uporabnika.
+Brezplačne akcije pa so tiste katerih izvedba le bere trenutno stanje verige blokov, ne naredi nobenih sprememb.
+Prav tako pri brezplačnih akcijah ni potrebe po čakanju na potrditev akcije v naslednjem bloku, saj le beremo aktualno stanje in beremo lahko stanje kadarkoli in to instantno.
+Primer brezplačne akcije pri ERC20 token pogodbah, katere smo omenili pri plačljivih akcijah, je recimo branje stanja oziroma količine toknov, katere si nek uporabnik trenutno lasti \cite{eth_smart_contract_intro}.
 
 \section{Solidity}
 TODO
