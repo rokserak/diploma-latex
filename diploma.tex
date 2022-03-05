@@ -450,14 +450,24 @@ Interakcija z Ethereum platformo in pametnimi pogodba na sami platformi pa je mo
 Obstajajo več implementacij Ethereum vozlišč, med katerimi so trenutno najpogosteje uporabljene Geth ali pa Nethermind implementacije.
 Za generacijo novih blokov Ethereum uporablja Proof of work kriptografski dokaz Ethash, z katerim rudarji potrjujejo transakcije, ki se dogajajo znotraj Ethereum platforme. 
 Ethereum transakcije lahko vključujejo različne informacije. 
+Za potrjevanje trasakcij oziroma generacijo blokov, so rudarji tudi nagrajeni z izplačili v Ether kriptovaluti.
 Lahko so le transkcije, ki pošljejo določeno količino Ether kriptovalute iz nekega računa na nek drug račun.
 Lahko pa so tudi bolj kompleksne, te pa komunicirajo z EVM in pametnimi pogodbami.
-Je pa tudi v transakcijah, ki komunicijajo z EVM navadno vključena neka količina Ethera, saj je potrebno za spremembe stanja na verigi blokov plačati.
-
-TODO eth literatura
+Je pa tudi v transakcijah, ki komunicijajo z EVM navadno vključena neka količina Ethera, saj je potrebno za spremembe stanja na verigi blokov plačati \cite{ethereum_whitepaper}.
 
 \section{Filecoin}
-TODO
+Filecoin je decentralizirano omrežje za hranjenje in distribucijo datotek.
+Omrežje deluje na svoji verigi blokov z kriptovaluto Filecoin.
+Prav tako omrežje deluje s pomočjo IPFS protokola \cite{IPFS}, ki omogoča učinkovito distribucijo datotekek na decentraliziranih omrežjih.
+Na Filecoin omrežju lahko najamemo prostor za hranjenje datotek, za katerega plačamo s Filecoin kriptovaluto.
+V omrežje se lahko priključi kdor koli, mora le ponuditi neko količino prostora na svojem sistemu, katero lahko Filecoin omrežje potem zasede za svojo rabo.
+Filecoin uporablja tako imenovani Proof of replication dokaz, ki tu nadomešča Proof of work dokaz, katerega recimo uporablja Ethereum.
+Proof of replication dokaz zagotavlja uporabnikom, da lahko dostopajo do svojih datotek na omrežju od kjer koli želijo.
+Ta dokaz zagotavljajo tako imenovani rudarji, ki namesto potrjevanja transakcij, kar je njihova naloga pri verigah blokov kot je Ethereum, tukaj
+zagotavljajo hranjenje in dostopnost do shranjenih datotek.
+Za to so seveda nagrajeni z plačili oziroma nagradami, katere se rudarjem izplačajo v Filecoin kriptovaluti.
+Poskrbljeno je tudi za varnost datotek, torej vse datoteke na omrežju so zašifrirane z ključem, do katerega ima dostop le uporabnik sam, kar pomeni, 
+da ima dostop do same vsebine datotek le tisti, ki je te datoteke tudi naložil na omrežje \cite{filecoin}.
 
 \section{Pametne pogodbe}
 Pametne pogodbe so programi, kateri tečejo na verigah blokov.
