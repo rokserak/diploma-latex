@@ -426,8 +426,27 @@ TODO
 \section{Ponudniki identitet}
 TODO
 
-\section{Decentralizirane aplikacije - dApp}
-TODO
+\section{Decentralizirane aplikacije}
+Decentralizirane aplikacije so aplikacije, ki delujejo znotraj decenraliziranih platform.
+Trenutno so najbolj popularne decentralizirane aplikacije na Ethereum verigi blokov.
+Zaradi decentralizirane narave te aplikacije ne morejo biti manipulirane, odstranjene ali pa cenzurirane z strani 
+nekega posameznika ali organizacije oziroma je to v praksi skoraj nemogoče izvesti.
+Edin način za zaustavitev decentalizirane aplikacije, ki deluje na verigi blokov, bi bilo, da prevzamejo nadzor na verigo blokov z 51 \% napadom, 
+kjer bi lahko posameznik zaradi večinskega nadzora na verigi blokov, preuredil že potrjene bloke, oziroma transakcije znotraj blokov, ki so 
+komunicirale z določeno decentralizirano aplikacijo. 
+V teoriji pa bi bilo tudi možno ustaviti neko decentalizirano aplikacijo, če bi v samih pametnih pogodbah, ki so del aplikacije, implementirali
+neko funkcionalnost, ki bi ustavila, onemogočila delovanje samih pogodb.
+Do te funkcionalnosti, bi verjetno imelo dostop le omejeno število računov, verjetno le lastnih same aplikacije, 
+v tem primeru bi lahko sam lastnik ustavil svojo aplikacijo.
+Seveda pa bi bilo možno odkriti ali takšna funkcionalnost obstaja znotraj določene aplikacije, 
+saj imamo na verigah blokov možnost da posamezne pametne pogodbe dekompiliramo, ter tako analiziramo samo delovanje pogodb.
+Ker delujejo na verigi blokov, ima do nje dostop vsak, ki ima račun na tisti verigi blokov, kjer ta aplikacija teče.
+Videli smo že več primerov teh aplikacij na verigah blokov, kot so recimo decentralizirane menjalnice valut (DEX),
+decentralizirane avtonomne organiziracije (DAO), začetna ponudba kovancev (ICO).
+Je pa potrebno poudariti, da so decentralizirane aplikacije načeloma dražje za manjše uporabnike, kot pa tradicionalne centralizirane aplikacije, 
+vsaj na Ethereum platformi, saj interakcija z verigo blokov, bolj specifično zapisovanje podatkov na verigo blokov ni poceni operacija.
+Pri centraliziranih aplikacijah pa dosti stroškov pokrije sama centralizirana organizacija, ki stoji za aplikacijo \cite{dapps_investopedia} \cite{51_attack_investopedia}.
+
 
 \section{Verige blokov}
 Verige blokov so porazdeljene podatkovne baze, kjer so podatki porazdeljeni med vozlišča v njenem omrežju.
@@ -452,8 +471,10 @@ Za generacijo novih blokov Ethereum uporablja Proof of work kriptografski dokaz 
 Ethereum transakcije lahko vključujejo različne informacije. 
 Za potrjevanje trasakcij oziroma generacijo blokov, so rudarji tudi nagrajeni z izplačili v Ether kriptovaluti.
 Lahko so le transkcije, ki pošljejo določeno količino Ether kriptovalute iz nekega računa na nek drug račun.
-Lahko pa so tudi bolj kompleksne, te pa komunicirajo z EVM in pametnimi pogodbami.
+Lahko pa so tudi bolj kompleksne, te navadno vključujejo interakcijo z EVM in pametnimi pogodbami.
 Je pa tudi v transakcijah, ki komunicijajo z EVM navadno vključena neka količina Ethera, saj je potrebno za spremembe stanja na verigi blokov plačati \cite{ethereum_whitepaper}.
+
+TODO eth literatura
 
 \section{Filecoin}
 Filecoin je decentralizirano omrežje za hranjenje in distribucijo datotek.
