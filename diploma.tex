@@ -432,9 +432,6 @@ bi morala zaprositi za dovoljenje od samega uporabnika, kar bi uporabnik lahko d
 ostale storitve si ne morejo same dovoliti dostopa do tega podatka.
 Ponudniki identitet so danes zelo pogosto uporabljeni, prepoznamo jih lahko po gumbih na strani za prijavo v neko storitev, recimo "Prijava z Google računom" ali pa "Prijava z Facebook računom", kjer lahko za prijavo uporabimo Goggle oziroma Facebook račun preko njihove storitve ponudnika identitete \cite{identity_provider_ubisecure}.
 
-
-
-
 \section{Decentralizirane aplikacije}
 Decentralizirane aplikacije so aplikacije, ki delujejo znotraj decenraliziranih platform.
 Trenutno so najbolj popularne decentralizirane aplikacije na Ethereum verigi blokov.
@@ -545,7 +542,7 @@ Uporabimo ga lahko za izdelavo celotnih spletnih strani ali pa le za posamezne g
 druge spletne aplikacije, ki so lahko prav tako izdelane z React knjižnico ali pa katero koli drugo tehnologijo.
 Prav tako nam omogoča preprosto razdelitev aplikacij v manjše komponente, katere je potem lažje sprogramirati, sestaviti skupaj v uporabniški vmesnik
 ter morda še najbol pomembno, lažje vzdrževanje, kot kompleksnost aplikacije začne naraščati.
-Mi ga bomo uporabili pri izdelavi gradnika za decentralizirane aplikacije z prikazom podatkov o uporabniku in obrazcem za urejanje njegovih podatkov \cite{react_homepage}
+Mi ga bomo uporabili pri izdelavi gradnika za decentralizirane aplikacije z prikazom podatkov o uporabniku in obrazcem za urejanje njegovih podatkov \cite{react_homepage}.
 
 
 \section{WebStorm}
@@ -558,8 +555,39 @@ in zalednega dela (ang. Backend) z ogrodji, kot je recimo Express.js.
 Kar se tiče programskih jezikov, pa ponuja podporo za JavaScript, TypeScript, Node.js in še nekaj drugih \cite{jetbrains_webstorm}.
 
 
+\section{Hardhat}
+TODO
+
+
 \chapter{Razvoj aplikacije}
 TODO
+
+\section{Priprava razvojnega okolja}
+Razvoj aplikacije smo začeli z Hardhat predlogo projekta \cite{hardhat_react_boilerplate}, katera nam nudi dobro osnovo
+za začatek razvoja, saj nam vzpostavi lokalno Ethereum verigo blokov, na kateri lahko med razvojem pametnih pogodb,
+le te tudi testiramo.
+Hardhat predloga nam ponuja tudi Mocha.js testno ogrodje v kombinaciji z Chai.js knjižnico, kar lahko izkoristimo 
+za pisanje testov s katerimi bomo lahko avtomatizirali testiranje pravilnega delovanja naših pametnih pogodb.
+
+Prav tako je imela predloga že vključeno tudi predlogo React aplikacije, je že imela vzpostavljeno komunikacijo z 
+preposto "Hello World" pametno pogodbo, kar je bilo koristno predvsem, kot osnovni primer interakcije z pametno pogodbo
+iz spletne aplikacije.
+
+Za testiranje na Ethereum Ropsten testni verigi blokov, smo si vzpostavili projekt na Infura.io platformi \cite{infura}, ki nam 
+ponuja brezplačna Ethereum vozlišča. Pravzaprav smo na Infuri vzpostavili dva projekta, vzpostavili smo si še Filecoin projekt,
+kateri pa nam bo nudil API za hranjenje in dostopanje do datotek na Filecoin testnem omrežju.
+
+\section{Razvoj pametne pogodbe}
+TODO
+
+
+\section{Razvoj uporabniškega vmesnika}
+TODO
+
+
+\section{Razvoj spletnega gradnika}
+TODO
+
 
 
 \chapter{Rezultati testiranja}
