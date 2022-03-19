@@ -395,6 +395,7 @@ Zasebni ključ uporabniki ohranjajo skrit, saj imaš z njim popoln nadzor na dol
 Iz zasebnega ključa pa lahko izpeljemo javni ključ oziroma naslov, katerega ponavadi delimo z drugimi uporabniki, 
 da nam lahko na primer pošljejo neko vsoto kripto valut na naš račun.
 Tudi javni ključ načeloma ni javno povezan z neko osebo, razen če oseba to sama objavi oziroma izpostavi.
+
 Tu vstopimo mi, z našo storitvijo ponudnika identitete, katero bomo implementirali z pametnimi pogodbami.
 Uporabnik bo lahko v naši storitvi shranil na verigi blokov svoje osebne podatke, katere bo sam izbral, 
 ter si tako ustvaril javno identito za svoj račun oziroma naslov na verigi blokov.
@@ -404,14 +405,17 @@ V sklopu diplome bomo implementirali storitev ponudnika identitev (ang. Identity
 Storitev bo uporabnikom omogočala shranjenje, prikazovanje in urejanja svoje identitete, katero bodo lahko decentralizirane aplikacije za prikaz osnovnih podatkov o uporabniku.
 Uporabnik sam bo seveda imel popoln nadzor nad svojo identiteto in tem, kaj želi, da njegova identiteta vključuje.
 Torej noben vnos podatkov ne bo obvezen, uporabnik bo lahko prosto uporabljal našo storitev, v takšnem obsegu, kot bo to sam želel.
+
 Storitev bo ponujala samo identiteto, ne pa tudi authentikacije in verifikacije, kar omogoča večina preostalih ponudnikov identitet, to pa zato, 
 ker verige blokov že same po sebi ponujajo authentikacijo z uporabo privatnega ključa in pa tudi identito z javnim ključem, 
 a iz javnega ključa težko razberemo kakršne koli osebne podatke o samem uporabniku, kar pa bo omogočala naša storitev.
 Našo storitev bomo razvili na Ethereum verigi blokov in Filecoin decentraliziranem omrežju za shranjevanje datotek.
 Na Ethereum platformi bomo imeli nameščeno našo storitev, ter hranili tekstovne podatke o uporabikih.
 Na Filecoin omrežju pa bomo hranili uporabnikove datoteke, katere so prav tako del njegove identitete, kot je na primer profilna slika.
+
 Dodatno bomo implementirali še spletni gradnik z uporabo React knjižnice, katerega bomo lahko decentralizirane aplikacije enostavno vključile vase.
 Z gradnikom bodo lahko prikazali uporabnikove podatke, prav tako pa bo uporabnik lahko urejal podatke preko gradnika.
+
 Seveda pa bo komunikacija z našo storitvijo možna tudi preko kateremo koli knjižnice, ki ima podporo za komunikacijo z pametnimi pogodbami na Ethereum verigi blokov, kot so recimo Ethers.js ali pa Web3.js.
 
 \section{Pregled sorodnih del}
@@ -430,13 +434,16 @@ Prav tako ima storitev dostop le do tistih podatkov, do katerih jim sam uporabni
 Recimo, da ima ponudnik identitete shranjeno tvojo EMŠO številko, v primeru, da bi neka druga storeitev želela dostop do tega podatka,
 bi morala zaprositi za dovoljenje od samega uporabnika, kar bi uporabnik lahko dovolil ali pa zavrnil znotraj ponudnika identitete,
 ostale storitve si ne morejo same dovoliti dostopa do tega podatka.
-Ponudniki identitet so danes zelo pogosto uporabljeni, prepoznamo jih lahko po gumbih na strani za prijavo v neko storitev, recimo "Prijava z Google računom" ali pa "Prijava z Facebook računom", kjer lahko za prijavo uporabimo Goggle oziroma Facebook račun preko njihove storitve ponudnika identitete \cite{identity_provider_ubisecure}.
+Ponudniki identitet so danes zelo pogosto uporabljeni, prepoznamo jih lahko po gumbih na strani za prijavo v neko storitev, 
+recimo "Prijava z Google računom" ali pa "Prijava z Facebook računom", kjer lahko za prijavo uporabimo Goggle oziroma 
+Facebook račun preko njihove storitve ponudnika identitete \cite{identity_provider_ubisecure}.
 
 \section{Decentralizirane aplikacije}
 Decentralizirane aplikacije so aplikacije, ki delujejo znotraj decenraliziranih platform.
 Trenutno so najbolj popularne decentralizirane aplikacije na Ethereum verigi blokov.
 Zaradi decentralizirane narave te aplikacije ne morejo biti manipulirane, odstranjene ali pa cenzurirane z strani 
 nekega posameznika ali organizacije oziroma je to v praksi skoraj nemogoče izvesti.
+
 Edin način za zaustavitev decentalizirane aplikacije, ki deluje na verigi blokov, bi bilo, da prevzamejo nadzor na verigo blokov z 51 \% napadom, 
 kjer bi lahko posameznik zaradi večinskega nadzora na verigi blokov, preuredil že potrjene bloke, oziroma transakcije znotraj blokov, ki so 
 komunicirale z določeno decentralizirano aplikacijo. 
@@ -444,11 +451,13 @@ V teoriji pa bi bilo tudi možno ustaviti neko decentalizirano aplikacijo, če b
 neko funkcionalnost, ki bi ustavila, onemogočila delovanje samih pogodb.
 Do te funkcionalnosti, bi verjetno imelo dostop le omejeno število računov, verjetno le lastnih same aplikacije, 
 v tem primeru bi lahko sam lastnik ustavil svojo aplikacijo.
+
 Seveda pa bi bilo možno odkriti ali takšna funkcionalnost obstaja znotraj določene aplikacije, 
 saj imamo na verigah blokov možnost da posamezne pametne pogodbe dekompiliramo, ter tako analiziramo samo delovanje pogodb.
 Ker delujejo na verigi blokov, ima do nje dostop vsak, ki ima račun na tisti verigi blokov, kjer ta aplikacija teče.
 Videli smo že več primerov teh aplikacij na verigah blokov, kot so recimo decentralizirane menjalnice valut (DEX),
 decentralizirane avtonomne organiziracije (DAO), začetne ponudbe kovancev (ICO).
+
 Je pa potrebno poudariti, da so decentralizirane aplikacije načeloma dražje za manjše uporabnike, kot pa tradicionalne centralizirane aplikacije, 
 vsaj na Ethereum platformi, saj interakcija z verigo blokov, bolj specifično zapisovanje podatkov na verigo blokov ni poceni operacija.
 Pri centraliziranih aplikacijah pa dosti stroškov pokrije sama centralizirana organizacija, ki stoji za aplikacijo \cite{dapps_investopedia} \cite{51_attack_investopedia}.
@@ -457,21 +466,25 @@ Pri centraliziranih aplikacijah pa dosti stroškov pokrije sama centralizirana o
 \section{Verige blokov}
 Verige blokov so porazdeljene podatkovne baze, kjer so podatki porazdeljeni med vozlišča v njenem omrežju.
 Verige blokov so trenutno najbolj razširjene v sistemih kriptovalut, kot so na primer Bitcoin in Ethereum.
-Njihova vloga v tem sistemih je decentralizirano beleženje in potrjevanje transakcij.
+Njihova vloga v teh sistemih je decentralizirano beleženje in potrjevanje transakcij.
 Verige blokov zagotavljajo varnost in intergriteto podatkov brez potrebe po neki tretji entiteti, kakor je drugače zagotavljala varnost in intergriteto podatkov v centraliziranih podatkovnih bazah.
 V verigah blokov so podatki razdeljeni v tako imenovane bloke.
+
 Vsak blok drži določen del informacij oziroma informacije o stanju verige blokov v nekem trenutku.
 Vsak blok je vezan na vse prejšnje bloke, torej ko se doda nov blok v verigo blokov, ga ni več možno spremeniti, ne vsebine, kot tudi ne položaja v verigi oziroma zaporedne številke bloka.
-Ko želimo brati podatke na verigi blokov, moramo vedeti za kateri trenutek želimo dobiti podatke, lahko beremo podatke oziroma stanje v zadnjem, aktualnem bloku, lahko pa tudi beremo zgodovinske podatke, kakšno je bilo stanje 1 dan, 1 teden, 1 leto nazaj, vse do začetka verige do prvega bloka.
+Ko želimo brati podatke na verigi blokov, moramo vedeti za kateri trenutek želimo dobiti podatke, lahko beremo podatke oziroma stanje v zadnjem, aktualnem bloku, 
+lahko pa tudi beremo zgodovinske podatke, kakšno je bilo stanje 1 dan, 1 teden, 1 leto nazaj, vse do začetka verige do prvega bloka.
 V tem primeru moramo samo vedeti katera številka bloka je bilo v tistem trenutku aktualno stanje \cite{blockchain_explained_investopedia}.
 
 \section{Ethereum}
 Ethereum je odprto kodna decentralizirana veriga blokov.
 V času pisanja je Ethereum druga največja veriga blokov, večja je le Bitcoin veriga blokov, katera je tudi originalna oziroma prva implementacija verige blokov.
 Kot primarno kripto valutu Ethereum uporablja Ether kriptovaluto.
+
 Ethereum platforma vsebuje Ethereum Virtual Machine (EVM), katera omogoča izvajanje pametnih pogodb na sami verigi blokov.
 Primarni programski jezik za uporabo znotraj EVM je Solidity, ostaja pa tudi Vyper programski jezik, ki pa je v času pisanja še v Alpha fazi razvoja.
 Interakcija z Ethereum platformo in pametnimi pogodba na sami platformi pa je možna z uporabo katerega koli programskega jezika, potrebujemo le implementacijo komunikacije z samo platformo preko JSON RPC protokola in povezavo z katerim koli vozliščem, ki je del Ethereum platforme.
+
 Obstajajo več implementacij Ethereum vozlišč, med katerimi so trenutno najpogosteje uporabljene Geth ali pa Nethermind implementacije.
 Za generacijo novih blokov Ethereum uporablja Proof of work kriptografski dokaz Ethash, z katerim rudarji potrjujejo transakcije, ki se dogajajo znotraj Ethereum platforme. 
 Ethereum transakcije lahko vključujejo različne informacije. 
@@ -488,11 +501,13 @@ Omrežje deluje na svoji verigi blokov z kriptovaluto Filecoin.
 Prav tako omrežje deluje s pomočjo IPFS protokola \cite{IPFS}, ki omogoča učinkovito distribucijo datotekek na decentraliziranih omrežjih.
 Na Filecoin omrežju lahko najamemo prostor za hranjenje datotek, za katerega plačamo s Filecoin kriptovaluto.
 V omrežje se lahko priključi kdor koli, mora le ponuditi neko količino prostora na svojem sistemu, katero lahko Filecoin omrežje potem zasede za svojo rabo.
+
 Filecoin uporablja tako imenovani Proof of replication dokaz, ki tu nadomešča Proof of work dokaz, katerega recimo uporablja Ethereum.
 Proof of replication dokaz zagotavlja uporabnikom, da lahko dostopajo do svojih datotek na omrežju od kjer koli želijo.
 Ta dokaz zagotavljajo tako imenovani rudarji, ki namesto potrjevanja transakcij, kar je njihova naloga pri verigah blokov kot je Ethereum, tukaj
 zagotavljajo hranjenje in dostopnost do shranjenih datotek.
 Za to so seveda nagrajeni z plačili oziroma nagradami, katere se rudarjem izplačajo v Filecoin kriptovaluti.
+
 Poskrbljeno je tudi za varnost datotek, torej vse datoteke na omrežju so zašifrirane z ključem, do katerega ima dostop le uporabnik sam, kar pomeni, 
 da ima dostop do same vsebine datotek le tisti, ki je te datoteke tudi naložil na omrežje \cite{filecoin}.
 
@@ -503,9 +518,11 @@ Prav tako so vsi podatki, katere pametna pogodba potrebuje za svoje delovanje, s
 Delovanje pametnih pogodb je avtomatizirano, kar pomeni, da ko nekdo želi izvesti neko funkcionalnost pametne pogodbe, ter zagotovi pogoje za izvedbo izbrane funkcionalnosti, te izvedbe ne more nihče preprečiti.
 Za interakcijo z pametno pogodbo uporabnik potrebuje račun na verigi blokov, na kateri je pogodba nameščena.
 Interakcijo oziroma akcije pametnih pogodb lahko razdelimo na dve večji kategoriji in sicer akcije, za katere je potrebno plačilo in tiste interakcije, katere so brezplačne.
+
 Plačljive akcije so tiste, katerih izvedba ima vpliv na stanje verige blokov, torej bo spremenila oziroma posobodila trenutno stanje verige blokov.
 Pomembno se je tudi zavedati, da se plačljive akcije ne izvede instantno, ampak je za izvedbo potrebna vključitev akcije v blok, katerega potem veriga blokov sprejme, kot novo aktualno stanje verige blokov.
 Trenutno najbolj pogost primer uporabe pametnih pogodb so tako imenovani ERC20 tokni, katere lahko naredi kdor koli, ter ji nato znotraj pametne pogodbe razdeli ostalim uporabnikom. Pri ERC20 token pogodba je recimo plačljiva akcija prenov neke količine toknov iz računa enega uporabnika na račun drugega uporabnika.
+
 Brezplačne akcije pa so tiste katerih izvedba le bere trenutno stanje verige blokov, ne naredi nobenih sprememb.
 Prav tako pri brezplačnih akcijah ni potrebe po čakanju na potrditev akcije v naslednjem bloku, saj le beremo aktualno stanje in beremo lahko stanje kadarkoli in to instantno.
 Primer brezplačne akcije pri ERC20 token pogodbah, katere smo omenili pri plačljivih akcijah, je recimo branje stanja oziroma količine toknov, katere si nek uporabnik trenutno lasti \cite{eth_smart_contract_intro}, \cite{erc20_token_standard}.
@@ -521,6 +538,7 @@ saj ga lahko uporabimo za razvoj pametnih pogodb na kateri koli platformi, ki im
 Javascript je objektno orientiran skriptni programski jezik, ki je bil prvotno razvit za izvajanje v spletnih brskalnikih.
 Kasneje pa se ga je prilagodilo še za druga okolja, kot so recimo spletni strežniki z Node.js okoljem, znotraj PDF
 dokumentov z uporabo Adobe Acrobat programske opreme in celo nekaterih podatkovnih bazah, kot je recimo Apache CouchDB.
+
 Je pa še vedno najbolj pogost primer uporabe JavaScript programskega jezika znotraj spletnih aplikacij.
 V spletnih aplikacijah nam ponuja zelo veliko funkcionalnosti, kot so recimo zagotavljanje interaktivnosti spletnih
 aplikacij, dinamično prikazovanje podatkov in še veliko več.
@@ -558,6 +576,9 @@ Kar se tiče programskih jezikov, pa ponuja podporo za JavaScript, TypeScript, N
 \section{Hardhat}
 TODO
 
+\section{Blockchain bridge}
+TODO
+
 
 \chapter{Razvoj aplikacije}
 TODO
@@ -569,7 +590,7 @@ le te tudi testiramo.
 Hardhat predloga nam ponuja tudi Mocha.js testno ogrodje v kombinaciji z Chai.js knjižnico, kar lahko izkoristimo 
 za pisanje testov s katerimi bomo lahko avtomatizirali testiranje pravilnega delovanja naših pametnih pogodb.
 
-Prav tako je imela predloga že vključeno tudi predlogo React aplikacije, je že imela vzpostavljeno komunikacijo z 
+Prav tako je imela predloga že vključeno tudi predlogo React spletne aplikacije, je že imela vzpostavljeno komunikacijo z 
 preposto "Hello World" pametno pogodbo, kar je bilo koristno predvsem, kot osnovni primer interakcije z pametno pogodbo
 iz spletne aplikacije.
 
@@ -578,7 +599,40 @@ ponuja brezplačna Ethereum vozlišča. Pravzaprav smo na Infuri vzpostavili dva
 kateri pa nam bo nudil API za hranjenje in dostopanje do datotek na Filecoin testnem omrežju.
 
 \section{Razvoj pametne pogodbe}
-TODO
+Razvoj smo začeli z definicijo strukture podatkov, katere bomo hranili znotraj ponudnika identitet.
+Odločili smo se za hranjenje nasledne strukture podatkov.
+
+\begin{verbatim}
+// TODO update once we have more
+
+struct Identity {
+    string name;
+    string given_name;
+    string family_name;
+}
+\end{verbatim}
+
+Definirano strukturo smo vključili v našo pametno pogodbo, ki bo služila, kot zaledni del (ang. Backend) naše storitve ponudnika identitet.
+
+Nato smo nadaljevali z razvojem funkcionalnosti za vnašanje, posodabljanje ter branje podatkov o določenem računu.
+Pri funkcionalnostih za vnašanje in posodabljanje podatkov smo pazili, da smo v implementacijo zagotovili, da lahko le lastnih določenega računa dodaja oziroma spreminja podatke o svoji identiteti.
+Kar se pa tiče branja podatkov o identiteti lastnika določenega računa pa smo zagotovili dve možnosti, torej da lahko lastnik računa bere oziroma pridobi svoje podatke, ter drugo možnost, preko katere pa lahko pridobi podatke o lastniku katerega koli drugega računa, pod pogojem, da pozna naslov tega računa, ter da je lastnik računa vnesel podatke o svoji identiteti v naši storitvi.
+
+Tu bi bilo še vredno omeniti, da so funkcionalnosti vnašanja oziroma posodabljanja podatkov o svoji identiteti plačljivi akciji, za katere mora uporabnik plačati z Ether kriptovalutu, da se podatki zapišejo v pametno pogodbo oziroma na Ethereum verigo blokov.
+Branje podatkov identitete pa je brezplačna akcija, saj pri tej akciji ni potrebno zapisati ničesar na samo verigo blokov.
+
+
+V naslednjem koraku smo se odločili dodati možnost naložitve profilne slike v samo identiteto.
+Tukaj potrebujemo nekega ponudnika prostora, ki nam bo garantiral hrambo slike, znotraj pametne pogodbe v identiteti pa bi želeli hraniti le referenco na to datoteko, kjer koli je že shranjena.
+Odločili smo se za Filecoin omrežje za hrambo slik, saj je tam hranjenje datotek veliko ceneje, kot pa v sami pametni pogodbi, kjer bi bilo to zelo neućinkovito ter drago, saj več podatkov, kot jih želimo zapisati na verigo blokov, več nas to stane.
+Samo referenca na datoteko pa zavzame zelo malo prostora.
+
+Za interakcijo z Filecoin omrežjem smo se odločili uporabiti eth-storage SDK \cite{textile_storage_gh}.
+Ta nam omogoča interakcijo z Filecoin omrežjem preko njihove implementacije mosta med Ethereum verigo blokov, ter Filecoin omrežjem.
+Sam most nam omogoča, da za interakcijo z Filecoin omrežjem plačamo v Ethereum kriptovaluti namesto Filecoin kriptovalute, ki jo drugače uporablja omrežje kot plačilno sredstvo za najem prostora in nalaganje datotek na omrežje.
+Prav tako nam SDK zagotovi funkcionalnosti za nalaganje in dostop do datotek na Filecoin omrežju.
+
+Tukaj smo sedaj implementirali funkcionalnosti, da lahko uporabnik naloži svojo profilno sliko na omrežje, ter za to plača z Ether kripto valuto, nato pa se še shrani referenca na naloženo sliko v njegovo identiteto, ter si tako zagotovimo možnost dostopanja do njegove profilne slike iz kjer koli to želimo oziroma jo potrebujemo. 
 
 
 \section{Razvoj uporabniškega vmesnika}
