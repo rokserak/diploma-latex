@@ -579,8 +579,16 @@ Vključuje veliko funkcionalnosti, kot so recimo prevajanje, testiranje in razhr
 Prav tako ponuja lokalno Ethereum omrežje, na katerem lahko preprosto testiramo svoje aplikacije brez potrebe po Ether kriptovaluti, kar bi potrebovali na ostalih Ethereum omrežjih, ali bi bil to Mainnet, Ropsten, Kovan...
 Glavna prednost Hardhat razvojnega okolja pa so vtiči, katere lahko razvijalci vključijo v samo razvojno okolje, kar nam ponudi še veliko dodatnih funckionalnosti, kot so recimo intergracija z Ethers.js knjižnico, ki je trenutno zelo popularna med Ethereum razvijalci, intergracija z Etherscan raziskovalcem blokov, ki je popularen predvsem zaradi storitve verifikacije pametnih pogodb, katero ponujajo preko svojega APIja in še veliko več \cite{hardhat_docs}.
 
-\section{Blockchain bridge}
-TODO
+\section{Most med verigami blokov}
+Most med verigami blokov je povezava med dvema različnima verigama blokov, preko katere se lahko pošlje neko količino neke kriptovalute iz ene verige blokov na drugo verigo blokov.
+Prav tako je možno pošiljati kakšna koli sporočila ali pa podatke preko teh mostov iz ene verige blokov na drugo.
+Most se lahko vzpostavi med katerima koliko verigama blokov, so neodvisni od protokolov, internega delovanja in različnih pravil, ki so implentirana v različnih verigah blokov.
+
+Mosti so lahko implentirani na veliko različnih načinov, a trenutno so najpogostejši centralizirani mostovi, kjer imamo neko centralno avtoriteto, ki operira ta most, ter nam zagotavlja pravilno delovanje samega mostu, in da se bodo kriptovaluto oziroma podatki pravilno, uspešno prenesli iz ene verige blokov na drugo.
+
+Potrebno je še poudariti, da so mostovi lahko implementirani enostransko ali pa oboje stransko.
+Enostranski mostovi omogočajo le prenos podatkov, kriptovalut iz prve verige blokov na drugo, medtem ko obojestranski omogočajo prenos iz prve na drugo ter obratno, torej iz druge na prvo nazaj.
+To je pomembno preveriti pred uporabo, da se laho izognemo izgubi podatkov, kriptovalut, v primeru, da uporabimo enostranski most, ter jih ne bi morali prenesti nazaj na izvirno verigo blokov \cite{blockchain_bridges_coinmarketcap}.
 
 \section{Metamask}
 TODO
