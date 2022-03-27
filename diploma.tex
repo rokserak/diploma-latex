@@ -34,6 +34,7 @@
 
 \usepackage{color}
 \usepackage{soul}
+\usepackage{listings}
 
 \usepackage[
 backend=biber,
@@ -588,7 +589,7 @@ Mosti so lahko implentirani na veliko različnih načinov, a trenutno so najpogo
 
 Potrebno je še poudariti, da so mostovi lahko implementirani enostransko ali pa oboje stransko.
 Enostranski mostovi omogočajo le prenos podatkov, kriptovalut iz prve verige blokov na drugo, medtem ko obojestranski omogočajo prenos iz prve na drugo ter obratno, torej iz druge na prvo nazaj.
-To je pomembno preveriti pred uporabo, da se laho izognemo izgubi podatkov, kriptovalut, v primeru, da uporabimo enostranski most, ter jih ne bi morali prenesti nazaj na izvirno verigo blokov \cite{blockchain_bridges_coinmarketcap}.
+To je pomembno preveriti pred uporabo, da se lahko izognemo izgubi podatkov, kriptovalut, v primeru, da uporabimo enostranski most, ter jih ne bi morali prenesti nazaj na izvirno verigo blokov \cite{blockchain_bridges_coinmarketcap}.
 
 \section{MetaMask}
 MetaMask je kripto denarnica, namenjena hranjenju Ether kriptovalute in ostalih žetonov na Ethereum verigi blokov, kot so recimo ERC20 žetoni ali pa ERC721 NFT žetonov.
@@ -618,15 +619,29 @@ kateri pa nam bo nudil API za hranjenje in dostopanje do datotek na Filecoin tes
 
 \section{Razvoj pametne pogodbe}
 Razvoj smo začeli z definicijo strukture podatkov, katere bomo hranili znotraj ponudnika identitet.
-Odločili smo se za hranjenje nasledne strukture podatkov.
+Odločili smo se za hranjenje nasledne strukture podatkov identitete, ki sledi OpenID Connect specifikaciji \cite{openid_connect_scopes} 
+z standardnim obsegom (ang. Scope), torej openid, profile in email obsegom.
+
+\subsection{Struktura identitete}
+\label{identity_struct}
 
 \begin{verbatim}
-// TODO update once we have more
-
 struct Identity {
-    string name;
+    // openid scope
+    string sub; // address
+
+    // profile scope
+    string name; // Full name
     string given_name;
+    string middle_name;
     string family_name;
+    string nickname; // Username
+    string picture; // CID of image on Filecoin network
+    uint updated_at; // Timestamp
+
+    // email scope
+    string email;
+    bool email_verified;
 }
 \end{verbatim}
 
@@ -654,6 +669,26 @@ Tukaj smo sedaj implementirali funkcionalnosti, da lahko uporabnik naloži svojo
 
 
 \section{Razvoj uporabniškega vmesnika}
+Pri razvoju uporabniškega vmesnika smo se najprej lotili izdelave obrazca, preko katerega bo lahko uporabnik vnesel in kasneje posodobil podatke o svoji identiteti.
+Prvo kot prvo smo se morali odločiti, katere gradnike bomo uporabili za izdelavo obrazca.
+
+Odločili smo se za MUI knjižnico gradnikov \cite{mui} v kombinaciji z react-hook-form knjižnico \cite{react_hook_form} za validacijo vnešenih podatkov.
+React-hook-form knjižnica nam ponuja preprosto validacijo obrazca preko React Hook funkcij, ki so del te knjižnice.
+Prav tako je integracija z gradniki drugih razvijalcev v react-hook-form obrazec zelo preprosta z uporabo nadzornih komponent (ang. Controller),
+katere "ovijejo" gradnike, ter jim tako dodajo funkcionalnost validacije in poslednično tudi prikaz napak pri vnosu podatkov v sam obrazec.
+React-hook-form nadzorna komponenta lahko ovije kateri koli gradnik, ki omogoča vnos podatkov, lahko so preprosti gradniki kot so recimo
+tekstnovna vnosna polja, ali pa gumbi, ter tudi polj kompleksna vnosna polja, kot so recimo izbirniki datumov, časa, vnosno polje za datoteke,
+v našem primeru za profilno sliko.
+
+V obrazec smo vključili večimo polj, katere smo definirali v naši strukturi identitete \ref{identity_struct}, z izjemo polj,
+katero so dinamično generirana, oziroma jih zgeneriramo mi pri vstavljanju oziroma posodabljanju podatkov.
+Ta polja so \lstinline{sub}, \lstinline{name}, \lstinline{picture}, \lstinline{updated_at}, \lstinline{email_verified}.
+Polje \lstinline{sub} je naslov uporabnikovega računa, kar se lahko pridobi iz klica pametne pogodbe.
+Polje \lstinline{name} je kombinacija polj \lstinline{given_name}, \lstinline{middle_name} in \lstinline{family_name} in se uporablja le pri branju podatkov.
+Polje \lstinline{picture} dobimo šele, ko se profilna slika uspešno naloži na Filecoin omrežje.
+Polje \lstinline{updated_at} pridobimo sami glede na aktualen čas, ko je bila zahteva na naložitev oziroma posodobitev podatkov sprožena.
+Polje \lstinline{email_verified} pa je še TODO.
+
 TODO
 
 
