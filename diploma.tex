@@ -420,9 +420,26 @@ Z gradnikom bodo lahko prikazali uporabnikove podatke, prav tako pa bo uporabnik
 Seveda pa bo komunikacija z našo storitvijo možna tudi preko kateremo koli knjižnice, ki ima podporo za komunikacijo z pametnimi pogodbami na Ethereum verigi blokov, kot so recimo Ethers.js ali pa Web3.js.
 
 \section{Pregled sorodnih del}
-Google, Facebook, Apple sign in, OpenID, Keycloak?
-TODO
-Namecoin
+
+\subsection{Socialna prijava}
+Socialna prijava je način prijave oziroma registracije v različne aplikacije z uporabo že obstoječih identitet znotraj drugih aplikacij oziroma ekosistemov, 
+kot je recimo Google, Facebook ali pa Apple račun, katerega uporabnik že uporablja znotraj posameznega ekosistema oziroma aplikacije.
+Torej uporabnik lahko izbere prijavo z recimo Google računom in bo v tem primeru aplikacija uporabila Googlovo storitev ponudnika identite,
+katera bo zagotovila osnovne podatke o uporabniku, kot je recimo unikaten identitekator znotraj Google ekosistema, uporabniško ime, email, ime, priimek, 
+oziroma podatke za katere uporabnik dovoli dostop aplikaciji v katero se prijavlja.
+Tako lahko aplikacije pridobijo osnovne podatke o uporabniku, brez, da bi moral uporabnik izpolniti obrazec za registracijo.
+Prav tako aplikacije ne hrani gesla oziroma poverilnic za uporabnika ampak je za to zadolžen ponudnik identit aplikacije z katero se je 
+uporabnik prijavi z socialno prijavo, recimo Google računom.
+Ali aplikacija ponuja možnost Socialne prijave je najlažje prepoznati po gumbih "Prijava z Google, Facebook računom" na njihovem prijavanem obrazcu \cite{social_login}.
+
+
+\subsection{Keycloak}
+Keycloak je storitev za upravljanje identitet in dostopa do omejenih virov z strani le teh identitet.
+Je odprto kodna rešitev za zagotavljanje avtentikacije in authorizacije uporabnikov oziroma identitet.
+Poleg tega ponuja še veliko dodatnih funkcionalnosti, kot so recimo upravljanje uporabnikov ter njihovih pravic,
+preko administrativnega vmesnika ali pa REST API vmesnika,
+socialne prijave preko integracije z ponudniki identitet drugih aplikacij, recimo Google ali pa Facebook računov \cite{}.
+
 
 \subsection{Preverljive poverilnice}
 SLOOPY
@@ -437,6 +454,9 @@ kot so recimo digitalni podpisi, kar jih naredi poskuse poseganja v same poveril
 
 Lastniki preverljivih poverilnic lahko iz samih poverilnic ustvarijo preverljive presentacije, katere se potem delijo z preveritelj, kot dokazilo, da imajo v posesti
 poverilnico z določenimi karakteristikami, recimo, da je lastnik poverilnice polnoleten.
+Dodatno lahko lastnik preverljive poverilnice omeji katere informacije oziroma karakteristike želi deliti v preverljiteljem znotraj postopka preverjanja poverilnice.
+Recimo lastnik poverilnice lahko določi, da želi deliti le karatkeristiko, da je polnoleten, ne želi pa deliti datum rojstva, in v 
+tem primeru bo preveritelj videl le to karakteristiko o polnoletnosti.
 
 Prav tako je dodatna prednosti preverljivih povernic in presentacij v primerjavi z fizičnimi dvojniki, da je deljenje le teh bolj priročno in hitrejše \cite{verifiable_credentials}.
 
