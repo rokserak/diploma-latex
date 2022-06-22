@@ -424,6 +424,37 @@ Google, Facebook, Apple sign in, OpenID, Keycloak?
 TODO
 Namecoin
 
+\subsection{Preverljive poverilnice}
+SLOOPY
+
+Poverilnice vsebujejo različne informacije oziroma dokaze glede na to kdo in pa za kateri namen je bila neka poverilnica ustvarjena.
+Lahko vsebuje podatke o posamezniku, kot je recimo ime, priimek, EMŠO.
+Takšna poverilnica je recimo izdana v fizični obliki osebne izkaznice z strani upravne enote v kateri posameznik stanuje.
+
+Preverljive poverilnice lahko predstavljajo enake informacije kot fizične poverilnice.
+Ker pa so preverljive poverilnice digitalne, lahko dodamo v le te poverilnice dodatne tehnologije, 
+kot so recimo digitalni podpisi, kar jih naredi poskuse poseganja v same poverilnice precej bolj očitne, kot pa pri fizičnih poverilnicah.
+
+Lastniki preverljivih poverilnic lahko iz samih poverilnic ustvarijo preverljive presentacije, katere se potem delijo z preveritelj, kot dokazilo, da imajo v posesti
+poverilnico z določenimi karakteristikami, recimo, da je lastnik poverilnice polnoleten.
+
+Prav tako je dodatna prednosti preverljivih povernic in presentacij v primerjavi z fizičnimi dvojniki, da je deljenje le teh bolj priročno in hitrejše \cite{verifiable_credentials}.
+
+\subsection{Decentralizirani identifikatorji}
+SLOOPY
+
+Decentralizirani identifikatorji so tip identifikatorja, ki nam omogoča preverljive in decentralizirane digitalne identitete.
+Decentraliziran identifikator lahko referencira kakršen koli predmet oziroma kar koli določi oziroma želi 
+uporabiti krmilnik (ang. Controller) le tega identifikatorja.
+Za razliko od centraliziranih identifikatorjev, kot je recimo EMŠO, so decentralizirani identifikatorji zasnovani tako, da jih
+lahko ločimo od centraliziranih ponudnikov identitet, katere bi lahko pri implementaciji uporabili za pridobitev informacij vključenih v decentralizirano identiteto.
+Ko imamo decentralizirano identiteto ustvarjemo je povsem neodvisna od ponudnikov podatkov, katere smo uporabili za pridobitev informacij o identiteti.
+Pomembno je lahko krmilnik identitet dokaže nadzor neke entitete nad predmetom, katerega predstavlja decentraliziran identifikator.
+Če poenostavimo je decentraliziran identifikar le unikatno zaporedje znakov, ki predstavlja identiteto predmeta, 
+na katerega je vezana le ta identiteta \cite{decentralized_identifiers}.
+
+
+
 
 \chapter{Orodja in tehnologije}
 
@@ -628,7 +659,7 @@ z standardnim obsegom (ang. Scope), torej openid, profile in email obsegom.
 \begin{verbatim}
 struct Identity {
     // openid scope
-    string sub; // address
+    address sub; // address
 
     // profile scope
     string name; // Full name
@@ -637,7 +668,7 @@ struct Identity {
     string family_name;
     string nickname; // Username
     string picture; // CID of image on Filecoin network
-    uint updated_at; // Timestamp
+    uint updated_at; // Block number in which add / update transaction was included
 
     // email scope
     string email;
@@ -686,7 +717,7 @@ Ta polja so \lstinline{sub}, \lstinline{name}, \lstinline{picture}, \lstinline{u
 Polje \lstinline{sub} je naslov uporabnikovega računa, kar se lahko pridobi iz klica pametne pogodbe.
 Polje \lstinline{name} je kombinacija polj \lstinline{given_name}, \lstinline{middle_name} in \lstinline{family_name} in se uporablja le pri branju podatkov.
 Polje \lstinline{picture} dobimo šele, ko se profilna slika uspešno naloži na Filecoin omrežje.
-Polje \lstinline{updated_at} pridobimo sami glede na aktualen čas, ko je bila zahteva na naložitev oziroma posodobitev podatkov sprožena.
+Polje \lstinline{updated_at} pridobimo sami glede na blok v katerega je bila vključena transakcija z klicem pametne pogodbe.
 Polje \lstinline{email_verified} pa je še TODO.
 
 TODO
