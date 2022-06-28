@@ -420,8 +420,22 @@ Z gradnikom bodo lahko prikazali uporabnikove podatke, prav tako pa bo uporabnik
 Seveda pa bo komunikacija z našo storitvijo možna tudi preko kateremo koli knjižnice, ki ima podporo za komunikacijo z pametnimi pogodbami na Ethereum verigi blokov, kot so recimo Ethers.js ali pa Web3.js.
 
 \section{Pregled sorodnih del}
+Ponudniki identitet so dandanes standard, kar se tiče avtentikacije in avtorizacije uporabnikov pri večini modernih aplikacij.
+Obstaja veliko različnih implementacij ponudnikov identitet od različnih ponudnikov socialnih prijav \ref{socialna_prijava}, kot je recimo "Prijava z Google računom", 
+pa do odprto kodnih implementacij, kot je recimo Keycloak \ref{keycloak}.
+Vsa se te implementacije so bile zgrajene za tako imenovan Web2 internet omrežja, medtem ko mi v sklopu diplomske naloge želimo 
+narediti preprosto implementacijo ponudnika identitet na Web3 internet omrežju.
+Glavna razlika med Web2 in Web3 je uporaba verig blokov, na kateri Web3 Aplikacije gostijo svojo poslovno logiko, znotraj različnih pametnih pogodb.
+Čeprav že obstajajo različne rešitve za hranjenje identitet na različnih verigah blokov, kot je recimo PolygonID \ref{polygon_id}.
+Ampak te rešitve se osredotočajo na zasebnost ter varnost podatkov znotraj same identitete.
+Prav tako je navadno potrebno priskrbeti dokazila za podatke, katere bo identiteta lahko dokazovala aplikacijam.
+To je v precej primerih pretirano, recimo v primerih, da bi uporabniki želeli imeti le preprost profil, torej uporabniško ime in profilno sliko, 
+z dodatnimi opcijskimi podatki.
+Takšne identite seveda ne ustrezajo pogojem za recimo dokazovanje državljanstva, so pa dovolj za recimo uporabo znotraj video igre.
+In na ta primer uporabe se želimo osredotočiti.
 
-\subsection{Socialna prijava}
+
+\subsection{Socialna prijava} \label{socialna_prijava}
 Socialna prijava je način prijave oziroma registracije v različne aplikacije z uporabo že obstoječih identitet znotraj drugih aplikacij oziroma ekosistemov, 
 kot je recimo Google, Facebook ali pa Apple račun, katerega uporabnik že uporablja znotraj posameznega ekosistema oziroma aplikacije.
 Torej uporabnik lahko izbere prijavo z recimo Google računom in bo v tem primeru aplikacija uporabila Googlovo storitev ponudnika identite,
@@ -433,12 +447,20 @@ uporabnik prijavi z socialno prijavo, recimo Google računom.
 Ali aplikacija ponuja možnost Socialne prijave je najlažje prepoznati po gumbih "Prijava z Google, Facebook računom" na njihovem prijavanem obrazcu \cite{social_login}.
 
 
-\subsection{Keycloak}
+\subsection{Keycloak} \label{keycloak}
 Keycloak je storitev za upravljanje identitet in dostopa do omejenih virov z strani le teh identitet.
 Je odprto kodna rešitev za zagotavljanje avtentikacije in authorizacije uporabnikov oziroma identitet.
 Poleg tega ponuja še veliko dodatnih funkcionalnosti, kot so recimo upravljanje uporabnikov ter njihovih pravic,
 preko administrativnega vmesnika ali pa REST API vmesnika,
-socialne prijave preko integracije z ponudniki identitet drugih aplikacij, recimo Google ali pa Facebook računov \cite{}.
+socialne prijave preko integracije z ponudniki identitet drugih aplikacij, recimo Google ali pa Facebook računov \cite{keycloak}.
+
+\subsection{Polygon ID} \label{polygon_id}
+TODO
+
+
+\section{Samosvojne identitete}
+Self Sovereign Identities
+TODO
 
 
 \subsection{Preverljive poverilnice}
